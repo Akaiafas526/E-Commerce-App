@@ -20,16 +20,19 @@ Product.init(
       alowNull: false,
     },
     price: {
-      // <--ASK SCOTT IN MORNING about passing values through decimal-->
-      type: DataTypes.DECIMAL(),
+      type: DataTypes.DECIMAL,
       allowNull: false,
-      // <----ASK TOMORROW about validating values?--->
+      validat: {
+        isDecimal:true
+      }
     },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 10,
-      // <----ASK TOMORROW about validating values?--->
+      validate: {
+        isNumeric: true
+      }
     },
     category_id: {
       type: DataTypes.INTEGER,
